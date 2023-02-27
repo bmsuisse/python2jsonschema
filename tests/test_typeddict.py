@@ -1,6 +1,11 @@
 import unittest
 from typing import TypedDict as typing_TypedDict
-from typing_extensions import TypedDict, NotRequired, Required
+import sys
+
+if sys.version_info < (3, 11):
+    from typing_extensions import NotRequired, Required, TypedDict
+else:
+    from typing import NotRequired, Required, TypedDict
 from python2jsonschema import get_json_schema_for_type
 
 
