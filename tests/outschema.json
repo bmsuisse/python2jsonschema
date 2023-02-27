@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "required": [
+        "value"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "value": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/TreeItems"
+            }
+        }
+    },
+    "$defs": {
+        "TreeItemData": {
+            "type": "object",
+            "properties": {
+                "TreeId": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "Type": {
+                    "enum": [
+                        "Workspace",
+                        "iframe",
+                        "Node",
+                        "App",
+                        "Report",
+                        "PaginatedReport",
+                        "Dashboard",
+                        "Tile",
+                        "Link"
+                    ]
+                },
+                "NameAPIOrig": {},
+                "DownloadLink": {},
+                "URL": {},
+                "EmbedURL": {},
+                "Icon": {},
+                "HelpUrl": {},
+                "Translation": {},
+                "DefaultEntryId": {},
+                "LinkTarget": {}
+            }
+        },
+        "TreeItems": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/$defs/TreeItemData"
+                },
+                "Children": {},
+                "isDefault": {},
+                "isHidden": {},
+                "order": {}
+            }
+        }
+    },
+    "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

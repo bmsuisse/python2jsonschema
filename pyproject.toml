@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "python2jsonschema"
+version = "0.8"
+description = "Creates a Json Schema File based on Python Types"
+authors = ["Adrian Ehrsam <adrian.ehrsam@bmsuisse.ch>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python2jsonschema"}]
+
+[tool.poetry.scripts]
+python2jsonschema = "python2jsonschema.cli:cli"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+pyright = "^1.1.295"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+
+
+[tool.pyright]
+venv = ".venv"
+venvPath = "."
+pythonVersion = "3.9"
+typeCheckingMode = "basic"
